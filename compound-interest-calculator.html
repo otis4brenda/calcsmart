@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator — Watch Your Money Grow | FreeMoneyIQ</title>
+  <meta name="description" content="See exactly how compound interest grows your money over time. Free calculator with monthly contributions, compounding frequency, and a full year-by-year breakdown." />
+  <meta name="keywords" content="compound interest calculator, compound interest formula, how does compound interest work, investment growth calculator, money growth calculator" />
+  <link rel="canonical" href="https://freemoneyiq.com/compound-interest-calculator.html" />
+  <meta property="og:title" content="Free Compound Interest Calculator | FreeMoneyIQ" />
+  <meta property="og:description" content="See exactly how compound interest grows your money over time. Free calculator with monthly contributions, compounding frequency, and a full year-by-year breakdown." />
+  <meta property="og:url" content="https://freemoneyiq.com/compound-interest-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta name="google-site-verification" content="yabzf5B-tALqjmJeuyczFJ1A_9VaFGuPrvecgYedLaU" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKB4113HX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LDKB4113HX');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5522299769790775" crossorigin="anonymous"></script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is compound interest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compound interest is interest calculated on both your original principal AND the interest you've already earned. Unlike simple interest (which only earns on the principal), compound interest snowballs over time. A $10,000 investment at 7% for 30 years grows to $76,123 with compound interest — vs. just $31,000 with simple interest. Einstein allegedly called it 'the eighth wonder of the world.'"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does compound interest compound?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compounding frequency varies by account type. Savings accounts typically compound daily or monthly. CDs may compound daily, monthly, or quarterly. Investment accounts (stocks/ETFs) effectively compound annually through reinvested dividends and price appreciation. The more frequently interest compounds, the slightly more you earn — daily compounding on $10,000 at 5% for 1 year gives $5,127 vs. $5,000 with annual compounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Rule of 72?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Rule of 72 is a quick mental math shortcut: divide 72 by your annual interest rate to estimate how many years it takes to double your money. At 6% interest, 72 ÷ 6 = 12 years to double. At 9%, it's 8 years. At 4%, it's 18 years. It's not perfectly precise but is remarkably accurate for rates between 2–20%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does $500/month invested for 30 years grow to?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At 7% annual return (historical stock market average), $500/month for 30 years grows to approximately $566,765. You contributed $180,000 total — compound interest did the remaining $386,765 of work. This is why starting early is so powerful: the same $500/month for only 20 years (starting 10 years later) yields just $260,463 — less than half, for two-thirds of the contributions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What return rate should I use for investing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The US stock market (S&P 500) has historically averaged about 10% annually before inflation, or 7% after inflation. For conservative planning, use 6–7%. For savings accounts and CDs in 2026, use 4–5%. For bonds, use 3–4%. For a balanced 60/40 portfolio (stocks/bonds), use 5–6%. Always model multiple scenarios to understand your range of outcomes."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use the Compound Interest Calculator",
+    "description": "Calculate how any investment grows over time with compound interest in under 60 seconds.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter your starting amount",
+        "text": "Input your initial investment or savings balance — this is your principal. Even $0 works if you're starting from scratch."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add monthly contributions",
+        "text": "Enter how much you plan to add each month. Regular contributions dramatically accelerate growth through dollar-cost averaging."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Set your rate and time horizon",
+        "text": "Enter your expected annual interest or return rate and how many years you plan to invest. Use 7% for a stock market index fund, 4.5% for a high-yield savings account."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose compounding frequency and calculate",
+        "text": "Select how often interest compounds (monthly is most common for savings accounts). Hit Calculate to see your future balance and year-by-year growth table."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a6cf6; --primary-dark: #1452c8; --accent: #00c9a7;
+      --bg: #f4f7fb; --card: #ffffff; --text: #1a1a2e; --muted: #6b7280;
+      --border: #e5e7eb; --radius: 12px; --shadow: 0 2px 16px rgba(26,108,246,0.08);
+    }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    nav { background: var(--card); border-bottom: 1px solid var(--border); padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .hero { background: linear-gradient(135deg, #1a6cf6 0%, #00c9a7 100%); color: white; text-align: center; padding: 48px 24px 40px; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 10px; }
+    .hero p { font-size: 1rem; opacity: 0.9; max-width: 540px; margin: 0 auto; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .adsbygoogle { display: block; margin: 28px auto; max-width: 728px; text-align: center; }
+    .calc-panel { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; margin: 32px auto; border: 1px solid var(--border); max-width: 700px; }
+    .calc-panel h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .calc-panel .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; color: var(--text); background: var(--bg); transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); background: white; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .calc-btn { width: 100%; background: var(--primary); color: white; border: none; border-radius: 10px; padding: 14px; font-size: 1.05rem; font-weight: 700; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+    .calc-btn:hover { background: var(--primary-dark); }
+    .result-box { background: linear-gradient(135deg, #f0f7ff, #e8fff8); border: 1px solid #c3dffe; border-radius: var(--radius); padding: 24px; margin-top: 24px; display: none; }
+    .result-box.show { display: block; }
+    .result-main { font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+    .result-label { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; }
+    .result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .result-item { background: white; border-radius: 8px; padding: 12px; border: 1px solid var(--border); }
+    .result-item .label { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+    .result-item .value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .growth-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 0.88rem; }
+    .growth-table th { background: var(--primary); color: white; padding: 10px 12px; text-align: left; }
+    .growth-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+    .growth-table tr:nth-child(even) td { background: #f9fafb; }
+    .content-section { max-width: 700px; margin: 0 auto 40px; padding: 0 20px; }
+    .content-section h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 12px; margin-top: 32px; }
+    .content-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .faq-section { max-width: 700px; margin: 0 auto 40px; padding: 0 20px; }
+    .faq-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 12px; background: var(--card); }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .faq-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin: 0; }
+    .related-calcs { max-width: 700px; margin: 0 auto 40px; padding: 0 20px; }
+    .related-calcs h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .related-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-decoration: none; color: var(--text); transition: box-shadow 0.2s; display: block; }
+    .related-card:hover { box-shadow: var(--shadow); }
+    .related-card .icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .related-card .name { font-size: 0.85rem; font-weight: 600; }
+    footer { background: var(--text); color: #9ca3af; text-align: center; padding: 32px 24px; font-size: 0.85rem; margin-top: 48px; }
+    footer a { color: #9ca3af; text-decoration: none; }
+    footer a:hover { color: white; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .result-breakdown { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Free<span>MoneyIQ</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/mortgage-calculator.html">Mortgage</a>
+    <a href="/loan-payoff-calculator.html">Loan</a>
+    <a href="/savings-goal-calculator.html">Savings</a>
+    <a href="/freelancer-rate-calculator.html">Freelance Rate</a>
+    <a href="/compound-interest-calculator.html" class="active">Compound</a>
+    <a href="/tax-withholding-calculator.html">Tax</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>📈 Free Compound Interest Calculator</h1>
+  <p>See how your money grows over time with the power of compound interest — including monthly contributions and a year-by-year breakdown.</p>
+</div>
+
+<div class="container">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5522299769790775" data-ad-slot="5890228291" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <div class="calc-panel">
+    <h2>📈 Compound Interest Calculator</h2>
+    <p class="subtitle">Enter your starting balance, monthly contributions, interest rate, and time horizon to see your future balance.</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Starting Balance ($)</label>
+        <input type="number" id="ci-principal" placeholder="e.g. 5000" value="5000" />
+      </div>
+      <div class="form-group">
+        <label>Monthly Contribution ($)</label>
+        <input type="number" id="ci-monthly" placeholder="e.g. 200" value="200" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="ci-rate" placeholder="e.g. 7" value="7" step="0.1" />
+      </div>
+      <div class="form-group">
+        <label>Time Period (Years)</label>
+        <input type="number" id="ci-years" placeholder="e.g. 20" value="20" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Compounding Frequency</label>
+      <select id="ci-freq">
+        <option value="12" selected>Monthly</option>
+        <option value="365">Daily</option>
+        <option value="4">Quarterly</option>
+        <option value="2">Semi-Annually</option>
+        <option value="1">Annually</option>
+      </select>
+    </div>
+
+    <button class="calc-btn" onclick="calcCompound()">Calculate Growth</button>
+
+    <div id="ci-result" class="result-box">
+      <div class="result-main" id="ci-future"></div>
+      <div class="result-label">Future Balance</div>
+      <div class="result-breakdown">
+        <div class="result-item"><div class="label">Starting Balance</div><div class="value" id="ci-start-out"></div></div>
+        <div class="result-item"><div class="label">Total Contributions</div><div class="value" id="ci-contrib"></div></div>
+        <div class="result-item"><div class="label">Interest Earned</div><div class="value" id="ci-interest"></div></div>
+        <div class="result-item"><div class="label">Total Invested</div><div class="value" id="ci-invested"></div></div>
+      </div>
+      <table class="growth-table" id="ci-table">
+        <thead><tr><th>Year</th><th>Balance</th><th>Contributions</th><th>Interest Earned</th></tr></thead>
+        <tbody id="ci-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5522299769790775" data-ad-slot="5890228291" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Content -->
+<div class="content-section">
+  <h2>Why Compound Interest Is the Most Powerful Force in Personal Finance</h2>
+  <p>Albert Einstein reportedly called compound interest "the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it." Whether or not Einstein actually said that, the math backs it up completely. Compound interest means you earn interest on your interest — and over time, that snowball effect becomes staggering.</p>
+  <p>Consider two people: Alex starts investing $300/month at age 25. Beth starts the same $300/month at age 35. Both earn 7% annually and invest until age 65. Alex ends up with about $905,000 — Beth ends up with about $454,000. Same monthly amount, same return rate, just a 10-year head start. That $36,000 extra in contributions (10 years × $3,600/year) turned into an extra $451,000. That's the power of time and compounding.</p>
+
+  <h2>The Rule of 72: Double Your Money Fast Math</h2>
+  <p>The Rule of 72 is a quick shortcut to estimate how long it takes to double your money. Simply divide 72 by your annual interest rate. At 6% — 72 ÷ 6 = 12 years to double. At 9% — 8 years. At 4% — 18 years. At 12% — just 6 years. It's not perfectly precise, but it's remarkably accurate for rates between 2–20% and gives you a powerful mental model for evaluating investment opportunities.</p>
+  <p>This also works in reverse for debt. A credit card charging 24% interest doubles what you owe in just 3 years if you make no payments. That's why compound interest is your best friend when you're saving and your worst enemy when you're carrying high-interest debt. Pay off high-interest debt first, then redirect those payments to investments.</p>
+
+  <h2>How to Maximize Compound Interest in Your Favor</h2>
+  <p>The three levers of compound interest are: starting amount, time, and rate. Time is the most powerful — and the one you control least once you delay. The best thing you can do right now is start, even with a small amount. A 7% return on $100/month starting at 25 grows to $262,000 by 65. Waiting until 35 yields $121,000 — less than half for the same investment.</p>
+  <p>Choose accounts that maximize compounding: high-yield savings accounts (4–5% APY in 2026) for short-term savings, and low-cost index funds in tax-advantaged accounts (Roth IRA, 401k) for long-term investing. The tax-advantaged piece matters enormously — in a Roth IRA, all your compound growth is tax-free. On $500,000 of compound interest earnings, that could save you $100,000+ in taxes.</p>
+</div>
+
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>What is compound interest?</h3>
+    <p>Compound interest is interest earned on both your principal AND previously accumulated interest. Unlike simple interest (principal only), compound interest snowballs — your interest earns interest. A $10,000 investment at 7% for 30 years: $76,123 compound vs. $31,000 simple. That difference is the magic of compounding.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How often does compound interest compound?</h3>
+    <p>Savings accounts typically compound daily or monthly. CDs may compound quarterly. Investment accounts effectively compound annually through reinvested dividends and gains. Daily compounding earns slightly more than monthly, which beats annual — but the difference is small compared to your rate and time horizon.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is the Rule of 72?</h3>
+    <p>Divide 72 by your annual rate to estimate years to double your money. At 6% → 12 years. At 9% → 8 years. At 4% → 18 years. It's a quick mental math shortcut that's accurate within 1–2% for most realistic rates. Great for quickly comparing investment options.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How much does $500/month grow over 30 years?</h3>
+    <p>At 7% annual return, $500/month for 30 years grows to approximately $566,765. You contributed $180,000 — compound interest generated the remaining $386,765. Start 10 years later and the result drops to $260,463. Time is more valuable than contribution size with compound interest.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What return rate should I use?</h3>
+    <p>S&P 500 historical average: ~10% nominal, ~7% after inflation. High-yield savings accounts in 2026: 4–5%. Bonds: 3–4%. Balanced 60/40 portfolio: 5–6%. For conservative long-term projections, use 6–7%. Always model best-case and worst-case scenarios — past returns don't guarantee future results.</p>
+  </div>
+</div>
+
+<div class="related-calcs">
+  <h2>Other Free Calculators</h2>
+  <div class="related-grid">
+    <a href="/mortgage-calculator.html" class="related-card"><div class="icon">🏠</div><div class="name">Mortgage Calculator</div></a>
+    <a href="/loan-payoff-calculator.html" class="related-card"><div class="icon">💳</div><div class="name">Loan Payoff Calculator</div></a>
+    <a href="/savings-goal-calculator.html" class="related-card"><div class="icon">🐖</div><div class="name">Savings Goal Calculator</div></a>
+    <a href="/freelancer-rate-calculator.html" class="related-card"><div class="icon">💼</div><div class="name">Freelancer Rate Calculator</div></a>
+    <a href="/tax-withholding-calculator.html" class="related-card"><div class="icon">🧾</div><div class="name">Tax Withholding Calculator</div></a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 FreeMoneyIQ — Free Finance Calculators</p>
+  <p style="margin-top:8px"><a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/about.html">About</a></p>
+</footer>
+
+<script>
+  function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+  function calcCompound() {
+    const principal = +document.getElementById('ci-principal').value || 0;
+    const monthly   = +document.getElementById('ci-monthly').value || 0;
+    const rate      = +document.getElementById('ci-rate').value / 100;
+    const years     = +document.getElementById('ci-years').value || 1;
+    const freq      = +document.getElementById('ci-freq').value;
+
+    const rPerPeriod = rate / freq;
+    const totalPeriods = freq * years;
+    const periodsPerMonth = freq / 12;
+
+    // Build year-by-year table
+    let balance = principal;
+    let totalContributed = principal;
+    const tbody = document.getElementById('ci-tbody');
+    tbody.innerHTML = '';
+
+    for (let y = 1; y <= years; y++) {
+      const startBalance = balance;
+      // Compound for this year
+      for (let p = 0; p < freq; p++) {
+        balance = balance * (1 + rPerPeriod) + monthly * (12 / freq);
+      }
+      const yearContrib = monthly * 12;
+      totalContributed += yearContrib;
+      const yearInterest = balance - startBalance - yearContrib;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>Year ${y}</td><td>${fmt(balance)}</td><td>${fmt(totalContributed)}</td><td>${fmt(balance - totalContributed)}</td>`;
+      tbody.appendChild(tr);
+    }
+
+    const totalInvested = principal + monthly * 12 * years;
+    const interestEarned = balance - totalInvested;
+
+    document.getElementById('ci-future').textContent = fmt(balance);
+    document.getElementById('ci-start-out').textContent = fmt(principal);
+    document.getElementById('ci-contrib').textContent = fmt(monthly * 12 * years);
+    document.getElementById('ci-interest').textContent = fmt(interestEarned);
+    document.getElementById('ci-invested').textContent = fmt(totalInvested);
+    document.getElementById('ci-result').classList.add('show');
+  }
+</script>
+</body>
+</html>
