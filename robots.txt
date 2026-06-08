@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freemoneyiq.com/sitemap.xml
