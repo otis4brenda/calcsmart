@@ -24,6 +24,46 @@ Before rewriting anything, use web_search to find:
 
 ---
 
+## ⚠️ FILE EDITING — USE THE PATCH SCRIPT (not edit, not read+write)
+
+Calculator pages contain multiple JSON-LD schema blocks. Using `edit` causes match failures;
+using `read`+`write` reproduces the full HTML file and causes timeouts.
+
+**Always use this pattern:**
+
+### Step 1 — Write a patch JSON file
+Write your new content to `/tmp/julie-patch.json`:
+```json
+{
+  "quick_answer": "Your new quick answer text (HTML allowed)...",
+  "faq_answers": ["Answer 1", "Answer 2", "Answer 3", "Answer 4", "Answer 5"],
+  "subtitle_month": "June 2026"
+}
+```
+
+### Step 2 — Run the patch script
+```
+python3 /Users/otis/.openclaw/workspace/tools/patch-page.py \
+  /Users/otis/.openclaw/workspace/websites/finance-calc/[page-file] \
+  /tmp/julie-patch.json
+```
+The script handles both FAQ styles automatically and prints what it changed.
+
+### Step 3 — Update sitemap.xml lastmod
+Use exec with python to update only the lastmod for this page:
+```
+python3 -c "
+import re
+with open('/Users/otis/.openclaw/workspace/websites/finance-calc/sitemap.xml') as f: s = f.read()
+s = re.sub(r'(<loc>https://freemoneyiq.com/[PAGE-FILE]</loc>\\s*<lastmod>)[^<]+(</lastmod>)', r'\\g<1>[YYYY-MM-DD]\\2', s)
+with open('/Users/otis/.openclaw/workspace/websites/finance-calc/sitemap.xml','w') as f: f.write(s)
+"
+```
+
+**Never use `edit` or `read`+`write` on any calculator HTML or sitemap.xml.**
+
+---
+
 ## WHAT TO UPDATE EACH RUN
 
 ### 1. Quick Answer Blurb
@@ -80,6 +120,46 @@ git add [page].html sitemap.xml
 - Use numbers and specifics wherever possible — AI Overviews prefer factual, specific answers
 - Lead each FAQ answer with the direct answer first, explanation second
 - Target current PAA (People Also Ask) questions from Google search trends
+
+---
+
+## AEO — ANSWER ENGINE OPTIMIZATION (NEW — June 2026)
+
+This is now a core goal: get ChatGPT, Perplexity, and Claude to *recommend* FreeMoneyIQ
+when users ask finance questions.
+
+### Long-Tail Keyword Targeting
+Every refresh should weave in long-tail variations naturally in content:
+- **Mortgage page:** "how much is a $[X] mortgage payment at 6.5%", "can I afford a $[X] house on $[Y] salary"
+- **Loan payoff page:** "how long to pay off $[X] in debt with extra $[Y] payment"
+- **Savings/FIRE page:** "how much to save per month to retire at [age]", "what is my FIRE number"
+- **Compound interest:** "how much will $[X] grow in [Y] years at [Z]% return"
+- Use specific dollar amounts and current 2026 rates — these exact phrases are what people search
+
+### Current Mortgage Rate Context (update when refreshing mortgage page)
+- 30-year fixed: **6.43–6.53% APR** as of June 11, 2026
+- Rates rising: inflation hit 3-year high June 2026
+- Monthly payment on $300k @ 6.5% ≈ **$1,896/mo** (principal + interest)
+- Monthly payment on $400k @ 6.5% ≈ **$2,528/mo**
+- These specific figures should appear in content — they match live search queries
+
+### Content Structure for AEO
+- "Answer First" format: Quick Answer box → Calculator → Deep content → FAQs
+- FAQs should mirror actual ChatGPT/Perplexity question phrasing
+- Include one "Definition" style FAQ ("What is a mortgage calculator?") for entity recognition
+- Cite sources when quoting rates: "According to Freddie Mac's June 2026 PMMS survey..."
+
+### robots.txt Check
+Verify robots.txt at the site root includes:
+```
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+```
+(Check once; this doesn't change per refresh)
 
 ---
 
